@@ -25,6 +25,7 @@ export default {
   .footer{
     width: 100%;
     height: 5em;
+    line-height: 5em;
     background: grey;
     position:fixed;
     bottom: 0;
