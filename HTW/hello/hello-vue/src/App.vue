@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <topNav msg="TOP NAV"/>
-    <mainArea msg="BODY"/>
+    <topNav msg="이 메세지가 보인다면"/>
+    <mainArea msg="우리는 성공한 것입니다"/>
   </div>
 </template>
 
