@@ -24,10 +24,10 @@ export default {
 
 .box_L{
   margin-top: 10%;
-  margin-left: 20%;
-  margin-right: 10%;
+  margin-left: 10%;
+  /* margin-right: 0; */
   margin-bottom: 10%;
-  width: 800px;
+  width: 80%;
   height: 500px;
   border: 1px solid red;
   overflow: hidden;
