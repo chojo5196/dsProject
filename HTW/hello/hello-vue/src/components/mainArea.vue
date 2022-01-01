@@ -1,21 +1,45 @@
 <template>
   <div class="main">
-    <h1>{{ msg }}</h1>
+   <div class="box_L">
+     <div class="box_S"><img src="" alt="분리수거"></div>
+     <div class="box_S"><img src="" alt="나눔"></div>
+     <div class="box_S"><img src="" alt="정보공유"></div>
+     <div class="box_S"><img src="" alt="쓰레기통"></div>
+     
+   </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'topNav',
+  name: 'mainArea',
   props: {
-    msg: String
+    msg: String,
   }
 }
 </script>
 
-<!-- scoped 설정 해주면 해당 컴포넌트에서만 적용되는 스타일 -->
 <style scoped>
-  main {
-    background: grey;
-  }
+  
+
+.box_L{
+  margin-top: 10%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 10%;
+  width: 80%;
+  height: 20em;
+  border: 1px solid red;
+  
+}
+
+.box_S{
+  display: inline-block;
+  border: 1px solid black;
+  width: 50%;
+  height: 50%;
+  
+}
+
+
 </style>
