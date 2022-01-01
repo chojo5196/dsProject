@@ -1,6 +1,8 @@
 <template>
   <div class="top-nav">
-    <img src="./../assets/logo.png" alt="NOIMG" class="logo-img">
+    <div class="logo-con">
+      <img src="./../assets/logo.png" alt="NOIMG" class="logo-img">
+    </div>
   </div>
 </template>
 
@@ -17,15 +19,21 @@ export default {
 <style scoped>
   .top-nav {
     width: 100%;
+    min-height: 100px;
     height: 10%;
     /* height: 100px; */
     background: grey;
     position: fixed;
-    line-height: 100%;
+  }
+
+  .logo-con{
+    display: inline-block;
+    line-height: 100px;  
   }
 
   .logo-img {
     width: 50px;
     vertical-align: middle;
+    cursor: pointer;
   }
 </style>
