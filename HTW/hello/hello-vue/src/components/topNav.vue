@@ -1,7 +1,8 @@
 <template>
   <div class="top-nav">
-    <h1>{{ msg }}</h1>
-    
+    <div class="logo-con">
+      <img src="./../assets/logo.png" alt="NOIMG" class="logo-img">
+    </div>
   </div>
 </template>
 
@@ -9,7 +10,7 @@
 export default {
   name: 'topNav',
   props: {
-    msg: String
+   
   }
 }
 </script>
@@ -17,7 +18,22 @@ export default {
 <!-- scoped 설정 해주면 해당 컴포넌트에서만 적용되는 스타일 -->
 <style scoped>
   .top-nav {
-    color: red;
+    width: 100%;
+    min-height: 100px;
+    height: 10%;
+    /* height: 100px; */
     background: grey;
+    position: fixed;
+  }
+
+  .logo-con{
+    display: inline-block;
+    line-height: 100px;  
+  }
+
+  .logo-img {
+    width: 50px;
+    vertical-align: middle;
+    cursor: pointer;
   }
 </style>
