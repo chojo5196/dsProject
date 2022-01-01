@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <topNav msg="TOP NAV"/>
-    <mainArea msg="BODY"/>
+    <topNav/>
+    <mainArea msg="우리는 성공한 것입니다"/>
+    <footer/>
   </div>
 </template>
 
@@ -13,7 +14,7 @@ export default {
   name: 'App',
   components: {
     topNav,
-    mainArea
+    mainArea,
   }
 }
 </script>
@@ -24,14 +25,16 @@ export default {
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  height: 100vh;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  
-  margin-right: 10%;
-  margin-left: 10%;
 }
 </style>
