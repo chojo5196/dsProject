@@ -24,6 +24,8 @@ export default {
     width: 100%;
     height: 5em;
     border:1px solid turquoise;
+    position:fixed;
+    bottom: 0;
   }
 
   ul {
