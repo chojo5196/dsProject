@@ -1,17 +1,19 @@
 <template>
   <div id="app">
-    <topNav msg="MAIN AREA"/>
-    <body msg="BODY"/>
+    <topNav msg="TOP NAV"/>
+    <mainArea msg="BODY"/>
   </div>
 </template>
 
 <script>
 import topNav from './components/topNav.vue'
+import mainArea from './components/mainArea.vue'
 
 export default {
   name: 'App',
   components: {
-    topNav
+    topNav,
+    mainArea
   }
 }
 </script>
@@ -31,6 +33,5 @@ export default {
   
   margin-right: 10%;
   margin-left: 10%;
-  background: yellow;
 }
 </style>

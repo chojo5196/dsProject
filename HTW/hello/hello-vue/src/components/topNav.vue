@@ -16,6 +16,7 @@ export default {
 
 <style scoped>
   .top-nav {
-    color: red;   
+    color: red;
+    background: grey;
   }
 </style>
