@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <topNav msg="이 메세지가 보인다면"/>
+    <topNav/>
     <mainArea/>
     <footerBottom/>
   </div>
@@ -16,7 +16,6 @@ export default {
   components: {
     topNav,
     mainArea,
-    footerBottom
   }
 }
 </script>
@@ -26,6 +25,10 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
 }
 
 #app {
