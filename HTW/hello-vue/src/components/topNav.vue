@@ -2,8 +2,8 @@
   <div class="top-nav">
     <div class="logo-con">
       <div class="logo-img" ></div>
-    
-    </div>
+     
+   </div>
   </div>
 </template>
 
