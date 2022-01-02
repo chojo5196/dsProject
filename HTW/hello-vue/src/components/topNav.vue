@@ -1,9 +1,8 @@
 <template>
   <div class="top-nav">
     <div class="logo-con">
-      <div class="logo-img" ></div>
-     
-   </div>
+      <img src="./../assets/logo2.png" alt="NOIMG" class="logo-img">
+    </div>
   </div>
 </template>
 
