@@ -30,10 +30,11 @@ export default {
     position:fixed;
     bottom: 0;
 
-    background: grey;
+    background: white;
+    border: 3px dashed black;
 
     font-weight: bold;
-    color: white;
+    
   }
 
   ul {

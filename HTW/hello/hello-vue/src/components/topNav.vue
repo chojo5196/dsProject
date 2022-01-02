@@ -1,7 +1,7 @@
 <template>
   <div class="top-nav">
     <div class="logo-con">
-      <img src="./../assets/logo2.png" alt="NOIMG" class="logo-img">
+     <div class="logo-img"></div>
     </div>
   </div>
 </template>
@@ -20,22 +20,32 @@ export default {
     
     width: 100%;
     height: 10%;
-    min-height: 100px;
-    max-height: 150px;
+    /* min-height: 100px;
+    max-height: 150px; */
 
-    background: grey;
+    background:white;
+    border: 3px dashed black;
     position: fixed;
     top:0;
     z-index: 10;
   }
 
   .logo-con {
+   
+    width: 30px;
+    height: 30px;
     display: inline-block;
-    line-height: 100px;  
+    /* line-height: 100px;   */
   }
 
   .logo-img {
-    width: 50px;
+
+    background-image: url("./../assets/logo2.png");
+    background-size: cover;
+    margin-top: 55%;
+
+    width: 30px;
+    height: 30px;
     vertical-align: middle;
     cursor: pointer;
   }
