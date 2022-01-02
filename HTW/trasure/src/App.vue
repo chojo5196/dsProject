@@ -48,6 +48,7 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 /* 100vh를 app으로 이동 */
@@ -58,7 +59,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  overflow: hidden;
+  overflow: unset;
 }
 
 
