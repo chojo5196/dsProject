@@ -62,7 +62,7 @@ export default {
   .btn-con {
     width: 500px;
     
-    border: 5px dotted grey;
+    border: 5px dotted white;
   }
 
   /* 하단부에 묘한 공백이 어디서 오는지 모르겠음 ㅜㅜ */

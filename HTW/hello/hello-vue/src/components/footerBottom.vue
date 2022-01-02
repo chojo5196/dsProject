@@ -24,16 +24,17 @@ export default {
   /* footer 본체 */
   .footer{
     width: 100%;
-    height: 5em;
+    height: 10%;
     line-height: 5em;
 
     position:fixed;
     bottom: 0;
 
-    background: grey;
+    background: white;
 
     font-weight: bold;
-    color: white;
+    color: black;
+    border:3px dashed black;
   }
 
   ul {
