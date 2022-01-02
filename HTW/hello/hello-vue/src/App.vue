@@ -2,21 +2,28 @@
   <div id="app">
     <topNav/>
     <mainArea/>
+    <sample/>
+    <join/>
     <footerBottom/>
   </div>
 </template>
+
 
 <script>
 import topNav from './components/topNav.vue'
 import mainArea from './components/mainArea.vue'
 import footerBottom from './components/footerBottom.vue'
+import sample from './components/sample.vue'
+import join from './components/join.vue'
 
 export default {
   name: 'App',
   components: {
     topNav,
     mainArea,
-    footerBottom
+    footerBottom,
+    sample,
+    join
   }
 }
 </script>
