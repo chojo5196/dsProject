@@ -1,7 +1,7 @@
 <template>
   <div class="top-nav">
     <div class="logo-con">
-      <img src="./../assets/logo.png" alt="NOIMG" class="logo-img">
+      <img src="./../assets/logo2.png" alt="NOIMG" class="logo-img">
     </div>
   </div>
 </template>
