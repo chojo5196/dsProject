@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button @click="onOff">join클릭</button>
+    <button @click="onOff" class="btnClick">join클릭</button>
 
 <!------------ 회원가입 모달창 ------------>
     <div class="modal2" ref="modal2">
@@ -15,17 +15,6 @@
                 :value="joinName"
                 ref="editName"
                 placeholder="username"/>
-              
-                <!--
-                <label>Gender</label>
-                <div v-for="gender in joinGender" class="seleBox"
-                :key="gender">
-                  <span>
-                    <input type="radio"
-                     v-model="genderPick"
-                     :value="gender"></span>{{gender}}
-                </div>
-                -->
 
                 <label>YYMMDD</label>
                 <input type="text"
@@ -156,7 +145,6 @@ export default {
       },
       
       validEmail: function (email) {
-        //var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         const emailRegex = RegExp(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
         return emailRegex.test(email);
       },
@@ -202,6 +190,13 @@ export default {
 
 <style>
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+.btnClick {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 50;
+}
 .modal2 {
   display: none;
   position: absolute;

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button @click="onOff">클릭</button>
+    <button @click="onOff" class="btnClick2">클릭</button>
 
 <!------------ 로그인 모달창 ------------>
   <div class="modal">
@@ -54,6 +54,13 @@ export default {
 
 <style>
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+.btnClick2 {
+  position: absolute;
+  top: 0;
+  left: 60px;
+  z-index: 50;
+}
 .modal {
   display: none;
   position: absolute;
