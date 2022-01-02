@@ -26,11 +26,9 @@ export default {
   box-sizing: border-box;
 }
 
-body {
-  height: 100vh;
-}
-
+/* 100vh를 app으로 이동 */
 #app {
+  height: 100vh;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

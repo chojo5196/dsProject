@@ -9,24 +9,26 @@
 <script>
 export default {
   name: 'topNav',
-  props: {
-   
-  }
 }
 </script>
 
 <!-- scoped 설정 해주면 해당 컴포넌트에서만 적용되는 스타일 -->
 <style scoped>
   .top-nav {
+    position: fixed;
+    top:0;
+    
     width: 100%;
-    min-height: 100px;
     height: 10%;
-    /* height: 100px; */
+    min-height: 100px;
+    max-height: 150px;
+
     background: grey;
     position: fixed;
+    z-index: 10;
   }
 
-  .logo-con{
+  .logo-con {
     display: inline-block;
     line-height: 100px;  
   }
