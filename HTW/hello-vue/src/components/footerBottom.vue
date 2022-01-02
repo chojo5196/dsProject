@@ -31,10 +31,10 @@ export default {
     bottom: 0;
 
     background: white;
+    border: 3px dashed black;
 
     font-weight: bold;
-    color: black;
-    border:3px dashed black;
+    
   }
 
   ul {
