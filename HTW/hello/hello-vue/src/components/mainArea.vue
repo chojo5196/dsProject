@@ -14,14 +14,13 @@
 
 <script>
 export default {
-  name: 'topNav',
+  name: 'mainArea',
   props: {
-    msg: String
+    msg: String,
   }
 }
 </script>
 
-<!-- scoped 설정 해주면 해당 컴포넌트에서만 적용되는 스타일 -->
 <style scoped>
   *{
     margin:0;

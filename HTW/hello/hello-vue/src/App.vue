@@ -1,20 +1,22 @@
 <template>
   <div id="app">
     <topNav/>
-    <mainArea msg="우리는 성공한 것입니다"/>
-    <footer/>
+    <mainArea/>
+    <footerBottom/>
   </div>
 </template>
 
 <script>
 import topNav from './components/topNav.vue'
 import mainArea from './components/mainArea.vue'
+import footerBottom from './components/footerBottom.vue'
 
 export default {
   name: 'App',
   components: {
     topNav,
     mainArea,
+    footerBottom
   }
 }
 </script>
@@ -34,5 +36,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  overflow: hidden;
+  
 }
 </style>
