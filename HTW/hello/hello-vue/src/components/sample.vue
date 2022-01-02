@@ -69,7 +69,7 @@ export default {
   width: 100%;
   height: 100%;
   background-color: #76b852;
-  opacity: 80%;
+  opacity: 99%;
   z-index: 1050;
 }
 
