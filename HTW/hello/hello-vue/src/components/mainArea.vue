@@ -1,6 +1,6 @@
 <template>  
-  <div class="main">
-    <div class="helper"></div>
+<!-- 이친구도 붙여서 두는게 맞아용! -->
+  <div class="main"><div class="helper"></div>
     <div class="btn-wrap">
       <div class="btn-con">
         <div class="img-btn"></div>

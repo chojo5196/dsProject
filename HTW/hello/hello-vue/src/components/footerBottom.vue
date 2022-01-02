@@ -34,7 +34,6 @@ export default {
     border: 3px dashed black;
 
     font-weight: bold;
-    
   }
 
   ul {

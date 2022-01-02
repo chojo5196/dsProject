@@ -1,70 +1,66 @@
 <template>
   <div>
     <button @click="onOff" class="btnClick">join클릭</button>
-
 <!------------ 회원가입 모달창 ------------>
     <div class="modal2" ref="modal2">
-      
-      <div class="login-page">
+      <div class="login-page"><div class="helper"></div>
         <div class="form">
           <form @submit.prevent novalidate=true>
-                
-                <label>Name*</label>
-                <input type="text"
-                @input="LiveName"
-                :value="joinName"
-                ref="editName"
-                placeholder="username"/>
+            <label>Name*</label>
+            <input type="text"
+              @input="LiveName"
+              :value="joinName"
+              ref="editName"
+              placeholder="username"/>
 
-                <label>YYMMDD</label>
-                <input type="text"
-                v-model="joinbirth"
-                ref="editBirthday"
-                placeholder="yyyymmdd"
-                maxlength=8/>
+            <label>YYMMDD</label>
+            <input type="text"
+              v-model="joinbirth"
+              ref="editBirthday"
+              placeholder="yyyymmdd"
+              maxlength=8/>
 
-                <label>ID*</label>
-                <input type="text"
-                @input="LiveId"
-                :value="joinId"
-                ref="editId"
-                placeholder="userId"/>
+            <label>ID*</label>
+            <input type="text"
+              @input="LiveId"
+              :value="joinId"
+              ref="editId"
+              placeholder="userId"/>
 
-                <label>Email*</label>
-                <input type="email"
-                v-model="joinEmail"
-                ref="editEmail"
-                placeholder="Email@.com"/>
+            <label>Email*</label>
+            <input type="email"
+              v-model="joinEmail"
+              ref="editEmail"
+              placeholder="Email@.com"/>
 
-                <label>Pw*</label>
-                <input type="password"
-                v-model="joinPw"
-                ref="editPw"
-                 placeholder="password"/>
+            <label>Pw*</label>
+            <input type="password"
+              v-model="joinPw"
+              ref="editPw"
+              placeholder="password"/>
 
-                <label>Re:Pw*</label>
-                <input type="password"
-                v-model="joinRePW"
-                ref="editRePw"
-                placeholder="password"
-                style="margin-bottom: 0px;"/>
-                <span class="checkpassword">{{pwMsg}}</span>
+            <label>Re:Pw*</label>
+            <input type="password"
+              v-model="joinRePW"
+              ref="editRePw"
+              placeholder="password"
+              style="margin-bottom: 0px;"/>
+            <span class="checkpassword">{{pwMsg}}</span>
 
-                <label >Phone</label>
-                <span v-for ="(value,index) in joinNum" :key="value">
-                  <input type="text" 
-                  :value="joinNum[index]"
-                  style="width: 120px;margin-right:15px;">
-                </span>
-                
-                <button
-                @click="joinFirst"
-                :disabled="isDisabled"
-                >가입완료</button>
-              </form>
+            <label >Phone</label>
+            <span v-for ="(value,index) in joinNum" :key="value">
+              <input type="text" 
+              :value="joinNum[index]"
+              style="width: 120px;margin-right:15px;">
+            </span>
+            
+            <button
+              @click="joinFirst"
+              :disabled="isDisabled"
+            >가입완료</button>
+          </form>
         </div>
       </div>
-
     </div>
   </div>
 </template>
@@ -75,21 +71,19 @@ export default {
   data() {
     return {
       testName:'',
-          testPw:'',
-          joinName: '',
-          joinGender: ['Male','Female','Nothing'],
-          genderPick:'Male',
-          joinId: '',
-          joinbirth:'',
-          joinEmail: '',
-          joinPw: '',
-          joinRePW: '',
-          joinNum:['010',null,null],
-          joinObj: ['검색','추천','광고','행사','기타'], 
-          objPick: [],
-          pwMsg: '동일한 비밀번호를 설정해주세요',
-          
-          
+      testPw:'',
+      joinName: '',
+      joinGender: ['Male','Female','Nothing'],
+      genderPick:'Male',
+      joinId: '',
+      joinbirth:'',
+      joinEmail: '',
+      joinPw: '',
+      joinRePW: '',
+      joinNum:['010',null,null],
+      joinObj: ['검색','추천','광고','행사','기타'], 
+      objPick: [],
+      pwMsg: '동일한 비밀번호를 설정해주세요',
     }
   },
   methods: {
@@ -152,7 +146,7 @@ export default {
         const pwRegex = RegExp(/[#?!@$%^&*-]/);
         return pwRegex.test(password);
       }
-    },
+  },
     watch: {
       joinName(val) {
         this.joinName = val.replace(/[^ㄱ-ㅎ|ㅏ-ㅣ|가-힣|a-z]/gi,'');
@@ -170,23 +164,20 @@ export default {
           this.pwMsg = '비밀번호가 일치합니다.'
         }
       }
-    },
+  },
     computed: {
       isDisabled() {
         //if(!this.joinName)
         return !this.joinName || !this.joinbirth;
       }
-    }
+  }
 }
-
   window.onclick = (e) => {
     if (e.target.className == 'modal2') {
       document.querySelector('.modal2').style.display = "none";
     }
   }
 </script>
-
-
 
 <style>
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
@@ -203,26 +194,37 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: #76b852;
   opacity: 99%;
   z-index: 1050;
 }
 
 .login-page {
-  width: 500px;
-  padding: 1% 0 0;
-  margin: auto;
+  width: 600px;
+  height: 100%;
+  /* padding: 1% 0 0; */
+  /* margin: auto; */
+}
+
+.helper{
+  /* width: 30px;
+  background: pink; */
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .form {
-  position: relative;
-  z-index: 1;
+  display: inline-block;
+  vertical-align: middle;
+  /* position: relative; */
+  /* z-index: 1; */
   background: #FFFFFF;
   max-width: 500px;
-  margin: 0 auto 100px;
-  padding: 45px;
-  text-align: center;
+  /* margin: 0 auto 100px; */
+  /* padding: 45px; */
+  /* text-align: center; */
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   border-radius: 15px;
 }
@@ -271,12 +273,12 @@ export default {
   text-decoration: none;
 }
 .form label {
-    display: flex;
-    margin-bottom: 5px;
+  display: flex;
+  margin-bottom: 5px;
 }
 .seleBox {
-    display: inline-block;
-    margin: 10px;
+  display: inline-block;
+  margin: 10px;
 }
 .checkpassword {
   font-size: 5px;

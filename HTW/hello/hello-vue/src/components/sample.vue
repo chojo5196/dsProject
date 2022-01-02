@@ -1,53 +1,48 @@
 <template>
   <div>
     <button @click="onOff" class="btnClick2">클릭</button>
-
-<!------------ 로그인 모달창 ------------>
-  <div class="modal">
-    
-    <div class="login-page">
-      <div class="form">
-        <form class="login-form">
-          <input type="text" v-model="inputId" placeholder="아이디"/>{{ inputId }}
-          <input type="password" v-model="inputPw" placeholder="비밀번호"/> {{ inputPw }}
-          <button action="submit" @click="console">로그인</button>
-          <p class="message">아직 회원가입 하지 않으셨나요? <a href="#">회원가입</a></p>
-        </form>
+    <!------------ 로그인 모달창 ------------>
+    <div class="modal">  
+      <div class="login-page">
+        <div class="form">
+          <form class="login-form">
+            <input type="text" v-model="inputId" placeholder="아이디"/>{{ inputId }}
+            <input type="password" v-model="inputPw" placeholder="비밀번호"/> {{ inputPw }}
+            <button action="submit" @click="console">로그인</button>
+            <p class="message">아직 회원가입 하지 않으셨나요? <a href="#">회원가입</a></p>
+          </form>
+        </div>
       </div>
     </div>
-
-  </div>
-  
   </div>
 </template>
 
 <script>
-export default {
-  name: 'sample',
-  data() {
-    return {
-      inputId: "",
-      inputPw: ""
-    }
-  },
-  methods: {
-    onOff() {
-      document.querySelector('.modal').style.display = "block";
+  export default {
+    name: 'sample',
+    data() {
+      return {
+        inputId: "",
+        inputPw: ""
+      }
     },
-    console() {
-      console.log("A");
-    }
-  },
-  created: function() {
-    window.onclick = (e) => {
-      if (e.target.className == 'modal' || e.target.className == 'modal2') {
-        document.querySelector('.modal').style.display = "none";
-        document.querySelector('.modal2').style.display = "none";
+    methods: {
+      onOff() {
+        document.querySelector('.modal').style.display = "block";
+      },
+      console() {
+        console.log("A");
+      }
+    },
+    created: function() {
+      window.onclick = (e) => {
+        if (e.target.className == 'modal' || e.target.className == 'modal2') {
+          document.querySelector('.modal').style.display = "none";
+          document.querySelector('.modal2').style.display = "none";
+        }
       }
     }
   }
-}
-
 </script>
 
 
