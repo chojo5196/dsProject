@@ -201,7 +201,7 @@ export default {
 }
 
 .login-page {
-  width: 600px;
+  width: 600px; 
   height: 100%;
   padding: 1% 0 0; 
   margin: auto;
