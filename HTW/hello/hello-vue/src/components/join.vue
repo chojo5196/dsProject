@@ -3,7 +3,7 @@
     <button @click="onOff" class="btnClick">join클릭</button>
 <!------------ 회원가입 모달창 ------------>
     <div class="modal2" ref="modal2">
-      <div class="login-page"><div class="helper"></div>
+      <div class="login-page">
         <div class="form">
           <form @submit.prevent novalidate=true>
             <label>Name*</label>
@@ -194,7 +194,7 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-color: #76b852;
   opacity: 99%;
   z-index: 1050;
@@ -203,28 +203,32 @@ export default {
 .login-page {
   width: 600px;
   height: 100%;
-  /* padding: 1% 0 0; */
-  /* margin: auto; */
+  padding: 1% 0 0; 
+  margin: auto;
 }
 
+/*
 .helper{
-  /* width: 30px;
-  background: pink; */
+  width: 30px;
+  background: pink;
   height: 100%;
   display: inline-block;
   vertical-align: middle;
 }
+*/
 
 .form {
+  /*
   display: inline-block;
   vertical-align: middle;
-  /* position: relative; */
-  /* z-index: 1; */
+  */
+  position: relative;
+  z-index: 1;
   background: #FFFFFF;
   max-width: 500px;
-  /* margin: 0 auto 100px; */
-  /* padding: 45px; */
-  /* text-align: center; */
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   border-radius: 15px;
 }
