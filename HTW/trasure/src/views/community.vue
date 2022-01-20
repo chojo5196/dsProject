@@ -117,7 +117,7 @@ export default {
 // 샘플 데이터 생성
 function pushData(n) {
   // 샘플 텍스트
-  let text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, molestiae sint, explicabo repudiandae vero iste voluptate repellendus sequi vitae suscipit mollitia! Ipsa debitis, nemo totam laborum nihil ab veritatis eligendi.";
+  let text = data.text;
   // json에 데이터 넣기
   for(let j = 0; j < 3; j++) {
     for(let i = 0; i < n; i++) {

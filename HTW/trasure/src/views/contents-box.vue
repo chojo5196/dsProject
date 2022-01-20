@@ -98,6 +98,7 @@ div {
     text-overflow: ellipsis;
     display: -webkit-box;
     word-break: normal;
+    -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
 }
 
