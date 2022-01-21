@@ -46,7 +46,7 @@ export default {
 .top{
     margin-left: 10%;
     margin-right: 10%;
-    margin-top: 10%;
+    margin-top: 5%;
 
     height: 100%;
 

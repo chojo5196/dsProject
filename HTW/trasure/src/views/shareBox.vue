@@ -1,12 +1,13 @@
 <template>
 <div class = "minibox">
-            <div class = "miniImg"
-            @click="imgClick">
-                <img src = "http://placehold.it/150X150"/>
-            </div>
-            <label>
-                <div class="miniTitle">
-                    {{name}}
+ 
+        <div class = "miniImg"
+        @click="imgClick">
+            <img src = "http://placehold.it/150X150"/>
+        </div>
+        <label>
+        <div class="miniTitle">
+            {{name}}
                 </div>
                 <div class = "miniAuthor">
                     {{author}}
@@ -15,6 +16,7 @@
                     {{type}}
                 </div>
             </label>
+
         </div>
 </template>
 
@@ -41,6 +43,10 @@ div {
 .minibox {
     display: flex;
     cursor: pointer;
+    padding-bottom: 10px;
+    height: 190px;
+    border-bottom: solid 0.7px;
+    align-items: center;
 }
 
 .miniImg {
