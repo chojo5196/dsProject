@@ -122,18 +122,32 @@ import modalView from './modal-view.vue'
   function pushData(n) {
     // 샘플 텍스트
     let text = data.text;
-    // json에 데이터 넣기
+
+    // 1차 랜덤 : 랜덤 숫자 간격 차이를 더 두기 위해서!
+    // 샘플 텍스트 길이가 너무 비슷해..
+    let textArr = [];
+    let textSum = 0;
+    for(let i = 0; textSum < text.length; i++ ) {
+      let random = Math.round( Math.random() * 10*i );
+      textArr[i] = random;
+        textSum += random;
+    }
+
+    // 샘플 데이터 생성 - ../assets/communityData.json에 넣게되어있음
+    // 1차 랜덤 숫자만큼 샘플 텍스트 자르기
     for(let j = 0; j < 3; j++) {
       for(let i = 0; i < n; i++) {
-        let random = Math.round( Math.random() * text.length );
+        let random = Math.round( Math.random() * textArr.length );
         
         data.data[j][i] = {};
         data.data[j][i].id = i+j;
         data.data[j][i].title = "sample" + i+j;
-        data.data[j][i].contents = i+j + text.substr(0, random);
+        data.data[j][i].contents = i+j + text.substr(0, textArr[random]);
         data.data[j][i].author = "User" + i+j;
+        
+        // 링크 호출만 하면 랜덤 이미지 생성됨
         data.data[j][i].src = "https://source.unsplash.com/random";
-        data.data[j][i].goodPoint = i;
+        data.data[j][i].goodPoint = (i+1)*(j+1);
       }
     }
     

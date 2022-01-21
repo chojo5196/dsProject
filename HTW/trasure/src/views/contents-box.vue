@@ -1,15 +1,20 @@
 <template>
 
     <div>
-        
+
         <div class="contents-box" @click="sample">
             <div class="img-box">
                 <img :src="contentDiv.src" alt="sample">
             </div>
             <div class="text-box">
-                <span class="author">
-                    {{ contentDiv.author }}
-                </span>
+                <div class="author-goodPoint">
+                    <span class="author">
+                        {{ contentDiv.author }}
+                    </span>
+                    <span class="goodPoint">
+                        <img :src="goodImg" alt=""> {{ contentDiv.goodPoint }}
+                    </span>
+                </div>
                 <span class="content-title">
                     {{ contentDiv.title }}
                 </span>
@@ -31,7 +36,8 @@ export default {
     props: [ 'sign' ],
     data() {
         return {
-            contentDiv: this.sign
+            contentDiv: this.sign,
+            goodImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5M3vp-vThaF6gtlyAHRcSt7H3_-6iAflQ8g&usqp=CAU"
         }
     },
     methods: {
@@ -40,8 +46,10 @@ export default {
 
             let bus = e.target.parentNode.parentNode;
 
+            console.log(bus.childNodes[1].childNodes[0].childNodes[0])
             let busArr = {};
-            busArr.author = bus.childNodes[1].childNodes[0].innerText;
+            busArr.author = bus.childNodes[1].childNodes[0].childNodes[0].innerText;
+            busArr.goodPoint = bus.childNodes[1].childNodes[0].childNodes[1].innerText;
             busArr.title = bus.childNodes[1].childNodes[1].innerText;
             busArr.texts = bus.childNodes[1].childNodes[2].innerText;
             busArr.imgSrc = bus.childNodes[0].childNodes[0].getAttribute('src');
@@ -94,13 +102,32 @@ div {
     border-radius: 0 0 10px 10px;
 }
 
+.author-goodPoint {
+    display: flex;
+}
+
 .author {
     display: block;
-    width: 100%;
+    width: 70%;
     height: 50%;
     /* height: 100%; */
     text-align: left;
     padding: 5px 10px 5px 10px;
+}
+
+.goodPoint {
+    display: block;
+    width: 30%;
+    height: 50%;
+    /* height: 100%; */
+    text-align: right;
+    padding: 5px 10px 5px 10px;
+    /* font-size: 15px; */
+}
+
+.goodPoint img {
+    width: 20px;
+    height: 20px;
 }
 
 .content-title {
@@ -126,7 +153,8 @@ div {
     text-overflow: ellipsis;
     display: -webkit-box;
     word-break: normal;
-    -webkit-line-clamp: 5;
+    /* 줄 바꿈 수 조절 가능 */
+    -webkit-line-clamp: 6;
     -webkit-box-orient: vertical;
 }
 

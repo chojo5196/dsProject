@@ -8,8 +8,11 @@
                         <img :src="receivedNode.imgSrc" alt="">
                     </div>
                     <div class="modal-text-box">
-                            <p>{{ receivedNode.title }}</p>
-                            <p>{{ receivedNode.texts }}</p>
+                            <div class="title-goodPoint">
+                                <p>{{ receivedNode.title }}</p>
+                                <p>좋아요 수 : {{ receivedNode.goodPoint }}</p>
+                            </div>
+                            <p class="txt">{{ receivedNode.texts }}</p>
                             <p>{{ receivedNode.author }}</p>
 
                     </div>
@@ -118,20 +121,35 @@ export default {
     line-height: 25px;
 }
 
-.modal-text-box p:nth-child(1) {
+.modal-text-box .title-goodPoint {
+    display: flex;
+    width: 100%;
+    height: 10%;
+}
+
+.title-goodPoint p:nth-child(1) {
+    width: 80%;
+    /* height: 10%; */
     font-size: 1.5em;
     font-weight: bold;
-    height: 10%;
     padding: 10px;
 }
 
-.modal-text-box p:nth-child(2) {
+.title-goodPoint p:nth-child(2) {
+    width: 100%;
     font-weight: bold;
-    height: 80%;
     padding: 10px;
 }
 
-.modal-text-box p:nth-child(3) {
+.modal-text-box .txt {
+    width: 100%;
+    height: 80%;
+    /* font-size: 1.5em; */
+    font-weight: bold;
+    padding: 10px;
+}
+
+.modal-text-box p:last-child {
     font-weight: bold;
     height: 10%;
     padding: 10px;
@@ -142,7 +160,7 @@ export default {
 
 .modalBox button {
     display: block;
-    background: #998E7D;
+    background: #E6D5BC;
     width: 100px;
     height: 40px;
     border-radius: 10px;
