@@ -142,7 +142,7 @@ export default {
 
 .modalBox button {
     display: block;
-    background: #E6D5BC;
+    background: #998E7D;
     width: 100px;
     height: 40px;
     border-radius: 10px;
