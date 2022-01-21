@@ -1,8 +1,10 @@
 <template>
+
     <div class="top">
 
         <h1>정보공유</h1>
-        <input v-model="inputValue" type="text" @keyup.enter="addHashtag"><br>
+          <modal-view />
+            <input id="formField" name="hashTag" v-model="inputValue" type="text" @keyup.enter="addHashtag"><br>
         <div class="hash-area">
             <div class="button-area">
                 <span v-for="(btn, idx) in hash" :key="idx">
@@ -89,60 +91,62 @@
 <script>
 import contentsBox from '../views/contents-box.vue'
 import data from '../assets/communityData.json'
+import modalView from './modal-view.vue'
 
-export default {
-    components: { contentsBox },
+
+
+  export default {
+    components: { contentsBox, modalView },
     name:'community',
-    data() {
+      data() {
         return {
             inputValue: "",
-            hash: [
-                "#hashtag1",
-                "#hashtag2"
-            ],
+            hash: data.hashTag,
             contentDiv1: data.data[0],
             contentDiv2: data.data[1],
             contentDiv3: data.data[2]
-        }
-    },
-    methods: {
+          }
+      },
+      methods: {
         addHashtag() {
+          if(this.inputValue != "") {
             this.hash.push("#" + this.inputValue);
-            this.inputValue = "";
-        }
+                this.inputValue = "";
+              }
+          }
     }
 }
 
 
-// 샘플 데이터 생성
-function pushData(n) {
-  // 샘플 텍스트
-  let text = data.text;
-  // json에 데이터 넣기
-  for(let j = 0; j < 3; j++) {
-    for(let i = 0; i < n; i++) {
-      let random = Math.round( Math.random() * text.length );
-
-      data.data[j][i] = {};
-      data.data[j][i].id = i;
-      data.data[j][i].title = "sample" + i;
-      data.data[j][i].contents = i + text.substr(0, random);
-      data.data[j][i].author = "User" + i;
-      data.data[j][i].src = "https://source.unsplash.com/random";
-      data.data[j][i].goodPoint = i;
+  // 샘플 데이터 생성
+  function pushData(n) {
+    // 샘플 텍스트
+    let text = data.text;
+    // json에 데이터 넣기
+    for(let j = 0; j < 3; j++) {
+      for(let i = 0; i < n; i++) {
+        let random = Math.round( Math.random() * text.length );
+        
+        data.data[j][i] = {};
+        data.data[j][i].id = i+j;
+        data.data[j][i].title = "sample" + i+j;
+        data.data[j][i].contents = i+j + text.substr(0, random);
+        data.data[j][i].author = "User" + i+j;
+        data.data[j][i].src = "https://source.unsplash.com/random";
+        data.data[j][i].goodPoint = i;
+      }
     }
+    
   }
-  
-}
-// 샘플 데이터 30개 생성
-pushData(10);
+  // 샘플 데이터 생성
+  pushData(20);
 
 </script>
 
 <style scoped>
 
  *{
-    margin:0;
+   margin:0;
     padding:0;
     box-sizing: border-box;
   }
@@ -159,6 +163,7 @@ pushData(10);
 }
 
 /* 성진 작성 구역 */
+
 .button-area > button {
     display: inline;
 }
@@ -246,6 +251,10 @@ h1 {
     row-gap: 20px;
   }
   
+}
+
+.none {
+  display: none;
 }
 
 </style>

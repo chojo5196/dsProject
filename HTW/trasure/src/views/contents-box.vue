@@ -1,24 +1,31 @@
 <template>
-    <div class="contents-box">
-        <div class="img-box">
-            <img :src="contentDiv.src" alt="sample">
+
+    <div>
+        
+        <div class="contents-box" @click="sample">
+            <div class="img-box">
+                <img :src="contentDiv.src" alt="sample">
+            </div>
+            <div class="text-box">
+                <span class="author">
+                    {{ contentDiv.author }}
+                </span>
+                <span class="content-title">
+                    {{ contentDiv.title }}
+                </span>
+                <span class="texts">
+                    {{ contentDiv.contents }}
+                </span>
+            </div>
         </div>
-        <div class="text-box">
-            <span class="author">
-                {{ contentDiv.author }}
-            </span>
-            <span class="content-title">
-                {{ contentDiv.title }}
-            </span>
-            <span class="texts">
-                {{ contentDiv.contents }}
-            </span>
-        </div>
+
     </div>
 </template>
 
 
 <script>
+import eventBus from "../assets/eventBus"
+
 export default {
     name: 'contents-box',
     props: [ 'sign' ],
@@ -26,8 +33,28 @@ export default {
         return {
             contentDiv: this.sign
         }
+    },
+    methods: {
+        sample(e) {
+            console.log('이벤트 송신');
+
+            let bus = e.target.parentNode.parentNode;
+
+            let busArr = {};
+            busArr.author = bus.childNodes[1].childNodes[0].innerText;
+            busArr.title = bus.childNodes[1].childNodes[1].innerText;
+            busArr.texts = bus.childNodes[1].childNodes[2].innerText;
+            busArr.imgSrc = bus.childNodes[0].childNodes[0].getAttribute('src');
+
+            eventBus.$emit('transferBus', busArr)
+            
+            // .communityModal은 modal-view.vue 컴포넌트에 있음!
+            document.querySelector(".communityModal").classList.remove("hidden");
+        }
     }
 }
+
+
 </script>
 
 <style scoped>
@@ -35,13 +62,14 @@ export default {
 div {
     margin: 0;
 }
+
 .contents-box {
     /* width: 380px; */
     /* height: 600px; */
     border-radius: 10px;
     margin: 10px;
     /* background: green; */
-    
+    cursor: pointer;
 }
 
 .img-box {
