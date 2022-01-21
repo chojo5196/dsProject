@@ -1,23 +1,20 @@
 <template>
-<div class = "minibox">
- 
-        <div class = "miniImg"
-        @click="imgClick">
+<div class = "minibox"  @click="imgClick">
+        <div class = "miniImg">
             <img src = "http://placehold.it/150X150"/>
         </div>
         <label>
         <div class="miniTitle">
             {{name}}
-                </div>
-                <div class = "miniAuthor">
-                    {{author}}
-                </div>
-                <div class="minitype">
-                    {{type}}
-                </div>
-            </label>
-
         </div>
+        <div class = "miniAuthor">
+            {{author}}
+        </div>
+        <div class="minitype">
+            {{type}}
+        </div>
+        </label>
+</div>
 </template>
 
 <script>
@@ -30,7 +27,7 @@ export default {
   },
   methods: {
     imgClick() {
-      console.log(this.author)
+      alert(this.name);
     }
   },
 }
@@ -40,7 +37,7 @@ export default {
 div {
     margin: 0;
 }
-.minibox {
+.minibox  {
     display: flex;
     cursor: pointer;
     padding-bottom: 10px;

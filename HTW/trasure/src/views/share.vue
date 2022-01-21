@@ -27,8 +27,9 @@ export default {
     data() {
     return {
       lists: [
-        {name: '나눔예제1', author: 'user1', type: '유형a'},
-        {name: '나눔예제2', author: 'user2', type: '유형b'}
+        {name: '나눔예제1', author: 'user1', type: '유행a'},
+        {name: '나눔예제2', author: 'user2', type: '유형b'},
+        {name: '나눔예제3', author: 'user2', type: '유형a'}
       ]
     }
   }
