@@ -178,8 +178,9 @@ import modalView from './modal-view.vue'
 
 /* 성진 작성 구역 */
 
-.button-area > button {
-    display: inline;
+.button-area button {
+    display: inline-block;
+    margin: 0 2px;
 }
 /* .wrap {
     display: flex;
