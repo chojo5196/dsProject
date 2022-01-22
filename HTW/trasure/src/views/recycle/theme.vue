@@ -1,17 +1,11 @@
 <template>
      <div class="sub-theme wrapper">
-           <div class="content-container">
-                <div class="content">
-                    <a href=""><img src="" alt="temp"></a>
-                </div>
-                <div class="content">
-                    <a href=""><img src="" alt="temp"></a>
-                </div>
-                <div class="content">
-                    <a href=""><img src="" alt="temp"></a>
-                </div>
-                <div class="content">
-                    <a href=""><img src="" alt="temp"></a>
+           <div class="theme-container">
+                <div class="theme-items" v-for="(theme, idx) in themsItem" :key="idx">
+                    <router-link :to="theme.link" class="link-style">
+                        <img :src="theme.img" class="theme-items-img">
+                        <p>{{theme.content}}</p>
+                    </router-link>
                 </div>
            </div>
        </div>
@@ -22,8 +16,15 @@ export default {
     name: "theme",
     data() {
         return {
-
+            themsItem: [
+                // img src가 그냥 걸어두면 연결이 안되고 require 연결해야함
+                {link: '../join', img: require('../../assets/fine.jpeg'), content:'tempContent'},
+                {link: '../join', img: require('../../assets/fine.jpeg'), content:'템맘마'},
+                {link: '../join', img: require('../../assets/fine.jpeg'), content:'뷰뷰뷰'},
+                {link: '../join', img: require('../../assets/fine.jpeg'), content:'컵히히'}
+            ]
         }
+
     }
 }
 </script>
@@ -54,7 +55,7 @@ export default {
         flex-wrap: wrap;
     }
 
-    .content-container{
+    .theme-container{
     
         /* arrange */
         /* 일정한 간격을 두고 flex item들을 보옂 */
@@ -63,13 +64,13 @@ export default {
         /* a앙 배치 */
         margin-left: auto;
         margin-right: auto;
-
     }
 
     /* flex items */
-    .content{
+    .theme-items{
         /* temp */
-        background: black;
+        background: rgba(151, 151, 151, 0.164);
+        
         
         /* DISPLAY */
         display: inline-block;
@@ -80,5 +81,22 @@ export default {
 
         /* arramge */
         margin: 5%;
+
+        /* border */
+        border-radius: 30px;
+
+        /* overflow */
+        overflow: hidden;
+    }
+
+    .theme-items-img{
+        width: 250px;
+        height: 200px;
+    }
+
+    /* link 데코 없애기 */
+    .link-style{
+        text-decoration: none;
+        color: black;
     }
 </style>

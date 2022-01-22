@@ -20,23 +20,25 @@
                     class="temp-background" 
                     @click="addArray(msg)">
                 <br/>
-                <input type="button" 
-                    value="띰"
-                    @click="showTheme">
-                <br/>
 
                 <!-- 검색기록 표시 체크 -->
                 <!-- test에 추천 검색어 띄워주면leea 좋을듯 -->
                 <!-- {{ msg==''?"검색중":"#"+msg }} 
                 <br/> -->
 
-                <!-- 최근검색어 저장 -->
+                <!-- 최근검색어 저장 및 토글 input -->
                 <label for="Search-checkbox">검색기록 표시</label>
-                <input type="checkbox" value="a" v-model="checked" checked>
+                <input type="checkbox" v-model="checked">
                 
+                <br/>
+                <input type="button" 
+                    value="테마를 확인해보세요"
+                    @click="showTheme">
+                <br/>
+
                 <!-- 컴포넌트로 빼기 -->
                 <div class="search-list-contrianer" v-show="checked">
-                    <span v-if="searchArray[0]==null">검색기록이 없습니다</span>
+                    <span v-if="searchArray[0]==null">검색기록이 없습니다. 재활용 방법을 검색해보세요!</span>
                     <ul v-else>
                         <li
                             v-for="(arr, idx) in searchArray"  
@@ -46,7 +48,8 @@
                             <div class="delete"
                                 @click="searchArray.splice(idx, 1)"></div>
                         </li>
-                    </ul><br/>
+                    </ul>
+                    <br/>
                 </div>
            </div>
            
@@ -58,10 +61,10 @@ export default {
     name: 'searchInput',
     data() {
         return {
-             msg : '',
+            msg : '',
             searchArray: [],
             nextId:0,
-            checked: true,
+            checked: false,
             // 프롭스로 전환해서 받기로 수정<<전
             options: {
                 "a": "명절",
@@ -86,7 +89,7 @@ export default {
                     // 검색기록에 # 붙여서 출력
                     this.searchArray.push({
                         id: this.nextId++,
-                        text: '#'+msg,
+                        text: '# '+msg,
                     });
                     this.msg=''
                 }
@@ -113,9 +116,9 @@ export default {
 
 
     .search-container {
-        
         /* background-color: red; */
         height: 100vh;
+        margin: 5% 0;
         
     }
 

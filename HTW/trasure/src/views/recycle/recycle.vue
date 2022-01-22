@@ -2,8 +2,9 @@
     <!-- wheel의 기본동작을 못 막음-> 이벤트를 먼저 계속 진행하게 하는것  -->
      <!-- v-on:wheel.passive="WheelEvent" -->
     <div class="recycle">
-       <!-- 위치 고정하기 -->
-        <h1>재활용</h1>{{testValue}}
+        <h2>버튼이벤트로 걸어놨는데 스크롤 인식으로 바꾸기</h2>
+        <h3>세로 가운데정렬 걸려있는 상태라 scroll 때문에 아래로 내려간 것 처럼 보임</h3>
+        <h1>{{testValue}} 재활용</h1>
         <searchInput
             class="search-box"
             :class="{ 'up-searchbox': show }"
@@ -14,7 +15,6 @@
            <theme v-show="show"/>
         </transition>
     </div>
-      
     
 </template>
 
@@ -28,8 +28,8 @@
         data() {
             return {
             show: false,
-            testValue: '',
-            lastScrollPosition: 0,
+            testValue: '???',
+            // lastScrollPosition: 0,
             }
         },
         methods : {
@@ -83,7 +83,7 @@
         /* height: 100%; */
 
         /* temp */
-        background: pink;
+        /* background: pink; */
         
         /* hidden */
         overflow: hidden;
@@ -104,7 +104,8 @@
     /* 타이밍 기능을 사용할 수 있습니다. */
     /* 전입 전출시 활성화 */
     .fade-enter-active {
-        transition: all 1s ease;
+        /* opacity: .3; */
+        transition: all 2s ease;
         /* ease 첨빨 중느 막빨 */
     }
     .fade-leave-active {
@@ -112,8 +113,6 @@
       /* transition 효과가 사용자가 정의한 cubic-bezier 함수에 따라 진행 */
     }
     .fade-enter, .fade-leave-to {
-        transform: translateY(100px);
-        /* 세로축으로 전환 */
         opacity: 0;
     }
 
