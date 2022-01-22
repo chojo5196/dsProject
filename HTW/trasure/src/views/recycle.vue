@@ -7,11 +7,12 @@
            <div class="vertical-container">
                <!-- 검색하면 post형식으로 submit 데이터 전송 -->
             
-                <input type="text" 
-                    v-model="msg" 
+                <input type="text"  
                     placeholder="검색어를 입력해주세요"
-                    @keyup.enter="addArray(msg)"
-                    list="search-options">
+                    class="temp-background"
+                    list="search-options"
+                    v-model="msg"
+                    @keyup.enter="addArray(msg)">
                 <datalist id="search-options">
                     <option v-for="(option, key, idx) in options" 
                             :key="idx" 
@@ -20,14 +21,17 @@
                 </datalist>
 
                 <!-- 와라와라 디비디비! -->
-                <input type="submit" method="post" value="검색" 
+                <input type="submit" 
+                    method="post" 
+                    value="검색"
+                    class="temp-background" 
                     @click="addArray(msg)">
                 <br/>
 
                 <!-- 검색기록 표시 체크 -->
                 <!-- test에 추천 검색어 띄워주면leea 좋을듯 -->
-                {{ msg==''?"검색중":"#"+msg }} 
-                <br/>
+                <!-- {{ msg==''?"검색중":"#"+msg }} 
+                <br/> -->
 
                 <!-- 최근검색어 저장 -->
                 <label for="Search-checkbox">검색기록 표시</label>
@@ -146,10 +150,18 @@ export default {
         opacity: 0;
     } */
 
+
     *{
         margin:0;
         padding:0;
         box-sizing: border-box;
+        color: unset;
+        background: unset;
+        color: black;
+    }
+
+    .temp-background {
+        background: white;
     }
 
     .recycle{
@@ -160,12 +172,17 @@ export default {
 
         /* position */
         /* position: relative; */
+
+        /* temp */
+        background: pink;
     }
 
 
     .search-container {
+        
         background-color: red;
         height: 100vh;
+        
     }
 
     .vertical-container {
@@ -202,6 +219,7 @@ export default {
 
     .search-list-contrianer{
         /* width: 30%; */
+        
         margin-left: auto;
         margin-right: auto;
     }
