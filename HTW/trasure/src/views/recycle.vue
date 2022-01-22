@@ -8,7 +8,14 @@
                     v-model="msg" 
                     placeholder="검색어를 입력해주세요"
                     @keyup.enter="clear"
-                    >
+                    list="search-options">
+                <datalist id="search-options">
+                    <option value="명절" name="a"/>
+                    <option value="새학기" name="b" />
+                    <option value="어린이날" name="c"/>
+                    <option value="파파존스" name="d"/>
+                </datalist>
+
                 <!-- 와라와라 디비디비! -->
                 <input type="submit" method="post" value="검색" 
                     @click="addArray(msg), clear()">
@@ -21,9 +28,10 @@
 
                 <!-- 최근검색어 저장 -->
                 <label for="Search-checkbox">검색기록 표시</label>
-                <input type="checkbox" value="a" v-model="checked">
+                <input type="checkbox" value="a" v-model="checked" checked>
+                
                 <div v-show="checked">
-                 {{searchArray[0]==null?"검색기록 없음":"최근검색기록"+searchArray}}
+                   {{searchArray[0]==null?"검색기록이 없습니다":searchArray}}
                 </div>
            </form>
        </div>
@@ -57,7 +65,7 @@ export default {
             // 배열로 담기 변경할 필요, enter 키로 입력받아서 값 하나씩 넣는걸로?
             msg : '',
             searchArray: new Array(),
-            checked: false,
+            checked: true,
         }
     },
     methods : {
@@ -137,7 +145,7 @@ export default {
         height: 100vh;
         
         /* visible */
-        /* opacity: 0; */
+        opacity: 0;
         
         /* position: absolute;
         bottom: 0; */
