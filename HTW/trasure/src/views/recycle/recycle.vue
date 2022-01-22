@@ -3,12 +3,12 @@
      <!-- v-on:wheel.passive="WheelEvent" -->
     <div class="recycle">
        <!-- 위치 고정하기 -->
-       <h1>재활용</h1>
-           <searchInput/>
-       <button @click="showComp">더보기</button>
-       <transition name="fade">
+        <h1>재활용</h1>{{testValue}}
+        <searchInput @valueFromChild="testParent"/>
+        <button @click="showComp">테마</button>
+        <transition name="fade">
            <theme v-show="show"/>
-       </transition>
+        </transition>
     </div>
       
     
@@ -25,6 +25,7 @@ export default {
     data() {
         return {
            show: false,
+           testValue: '',
         }
     },
     methods : {
@@ -34,6 +35,9 @@ export default {
             }
             else {this.show= true;}
         },
+        testParent(value) {
+            this.testValue = value;
+        }
         
         // WheelEvent(event) {
         //     // 스크롤 시 애니매이션 적용
@@ -78,7 +82,10 @@ export default {
     }
 
     /* search input */
-    
+    .change-size {
+        transition: 3s;
+        transform: translateY(-500px);
+    }
 
     /* theme */
     /* 애니메이션 진입 및 진출은 다른 지속 시간 및  */

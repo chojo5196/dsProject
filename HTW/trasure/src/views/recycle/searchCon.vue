@@ -1,12 +1,13 @@
 <template>
-    <div class="search-container"><div class="helper"></div>
+    <div class="search-container"><div class="helper" ></div>
            <div class="vertical-container">
                 <input type="text"  
                     placeholder="검색어를 입력해주세요"
                     class="temp-background"
                     list="search-options"
                     v-model="msg"
-                    @keyup.enter="addArray(msg)">
+                    @keyup.enter="addArray(msg)"
+                    @input="testChild">
                 <datalist id="search-options">
                     <option v-for="(option, key, idx) in options" 
                             :key="idx" 
@@ -59,16 +60,19 @@ export default {
             searchArray: [],
             nextId:0,
             checked: true,
+            // 프롭스로 전환해서 받기로 수정<<전
             options: {
                 "a": "명절",
                 "b": "새학기",
                 "c": "어린이날",
                 "d": "파파존스",
             },
-            show: true,
         }
     },
     methods : {
+        testChild(e){
+            this.$emit('valueFromChild', e.target.value)
+        },
         addArray(msg) {
             // 검색 로그 길이
             var searchLogSize = 5;
