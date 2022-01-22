@@ -4,8 +4,12 @@
     <div class="recycle">
        <!-- 위치 고정하기 -->
         <h1>재활용</h1>{{testValue}}
-        <searchInput @valueFromChild="testParent"/>
-        <button @click="showComp">테마</button>
+        <searchInput
+            class="search-box"
+            :class="{ 'up-searchbox': show }"
+            @showTheme="showComp"
+            @valueFromChild="testParent"
+            />
         <transition name="fade">
            <theme v-show="show"/>
         </transition>
@@ -14,43 +18,47 @@
     
 </template>
 
-
 <script>
-import searchInput from './searchCon.vue';
-import theme from './theme.vue';
+    import searchInput from './searchCon.vue';
+    import theme from './theme.vue';
 
-export default {
-    components:{searchInput, theme},
-    name:'recycle',
-    data() {
-        return {
-           show: false,
-           testValue: '',
-        }
-    },
-    methods : {
-        showComp(){
-            if(this.show==true) {
-                this.show=false;
+    export default {
+        components:{searchInput, theme},
+        name:'recycle',
+        data() {
+            return {
+            show: false,
+            testValue: '',
+            lastScrollPosition: 0,
             }
-            else {this.show= true;}
         },
-        testParent(value) {
-            this.testValue = value;
-        }
-        
-        // WheelEvent(event) {
-        //     // 스크롤 시 애니매이션 적용
-        //     var wheelDown = event.wheelDeltaY;
-        //     if(wheelDown<0) {
-        //         this.show = false;
-        //     } else {
-        //         this.show = true;
-        //     }
-        // },
-    }
+        methods : {
+            showComp(){
+                if(this.show==true) {
+                    this.show=false;
+                }
+                else {this.show= true;}
+            },
+            testParent(value) {
+                this.testValue = value;
+            },
 
-}
+
+            /*onScroll () {
+                const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+                if(currentScrollPosition<0) {
+                    return;
+                }
+                if(Math.abs(currentScrollPosition - this.lastScrollPosition)<60) {
+                    return
+                    // 차가 60이 되기 전 까지 대기
+                }
+                this.upInputBox = currentScrollPosition < this.lastScrollPosition;
+                this.lastScrollPosition = currentScrollPosition;
+            }*/
+
+        }
+    }
 
 </script>
 
@@ -82,9 +90,13 @@ export default {
     }
 
     /* search input */
-    .change-size {
-        transition: 3s;
-        transform: translateY(-500px);
+    .search-box {
+        transition: all .8s ease;
+    }
+
+    /* search input box 크기 조절 */
+    .up-searchbox {
+        height: 150px;
     }
 
     /* theme */

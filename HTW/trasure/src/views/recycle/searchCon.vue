@@ -1,5 +1,5 @@
 <template>
-    <div class="search-container"><div class="helper" ></div>
+    <div class="search-container"><div class="helper"></div>
            <div class="vertical-container">
                 <input type="text"  
                     placeholder="검색어를 입력해주세요"
@@ -14,13 +14,15 @@
                             :value="option"
                             :name="key"/>
                 </datalist>
-
-                <!-- 와라와라 디비디비! -->
                 <input type="submit" 
                     method="post" 
                     value="검색"
                     class="temp-background" 
                     @click="addArray(msg)">
+                <br/>
+                <input type="button" 
+                    value="띰"
+                    @click="showTheme">
                 <br/>
 
                 <!-- 검색기록 표시 체크 -->
@@ -73,6 +75,9 @@ export default {
         testChild(e){
             this.$emit('valueFromChild', e.target.value)
         },
+        showTheme(){
+            this.$emit('showTheme')
+        },
         addArray(msg) {
             // 검색 로그 길이
             var searchLogSize = 5;
@@ -109,7 +114,7 @@ export default {
 
     .search-container {
         
-        background-color: red;
+        /* background-color: red; */
         height: 100vh;
         
     }

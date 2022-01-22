@@ -32,9 +32,9 @@ export default {
     *{
         background-color: unset;
     }
-    .sub-theme {
+   /* .sub-theme { */
         /* temp */
-        background-color: green;
+        /* background-color: green; */
         
         /* size */
         /* height: 100vh; */
@@ -45,7 +45,7 @@ export default {
         /* position: absolute;
         bottom: 0; */
 
-    }
+    /* } */
 
     .wrapper {
         /* flext 적용 */
