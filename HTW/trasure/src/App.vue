@@ -1,29 +1,20 @@
 <template>
   <div id="app">
     <topNav/>
+    
     <router-view/>
-  <div class="main">
-    <div class="btn-wrap">
-      <div class="btn-con">
-         <div><router-link to="/community" ><img class="img-btn" src="./assets/icon5.png" alt=""></router-link></div> 
-         <div><router-link to="/recycle" ><img class="img-btn" src="./assets/icon2.png" alt=""></router-link></div> 
-         <div><router-link to="/share" ><img class="img-btn" src="./assets/icon4.png" alt=""></router-link></div> 
-         <div><router-link to="/map" ><img class="img-btn" src="./assets/icon3.png" alt=""></router-link></div> 
-      </div>
-    </div>
-    <div class="footer">
+    <main2/>      
+    
    
-    <div class="line">
+    <div class="footer">
      <ul>
        <li><router-link to="/join" >회원가입</router-link></li>
        <li><router-link to="/login" >로그인</router-link></li>
        <li>testing</li>
      </ul>
     </div>
-  </div>
-   <!-- <router-view/> -->
-  </div>
   
+   <!-- <router-view/> -->
   </div>
   
 </template>
@@ -31,13 +22,13 @@
 
 <script>
 import topNav from './components/topNav.vue'
-// import footerBottom from './components/footerBottom.vue'
+import main2 from './components/main2.vue'
 
 
 export default {
   name: 'App',
   components: {
-    topNav
+    topNav,main2
     
     
   }
@@ -45,69 +36,51 @@ export default {
 </script>
 
 <style>
+@font-face {
+    font-family:"NotoSansKR";
+    src: url("/assets/fonts/Lato/Lato-Light.ttf")format("ttf");
+    unicode-range: U+0041-005A, U+0061-007A;
+    font-style: normal;
+    font-weight: 300;
+}
+
+@font-face {
+  font-family: "NotoSansKR";
+  src: url("/assets/fonts/Noto_Sans_KR/NotoSansKR-Light.otf")format("otf");
+  font-style: normal;
+  
+} 
+
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: 'Noto Sans KR', sans-serif;
+  background-color: #fdfcfb;
+  font-family:"Noto Sans KR", sans-serif;
+  
 }
+
+
+
+
 
 /* 100vh를 app으로 이동 */
 #app {
   height: 100vh;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family:"Noto Sans KR", sans-serif;
   text-align: center;
-  color: #2c3e50;
+  color: #fdfcfb;
   overflow: unset;
 }
 
-
-
-  *{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-  }
-
-  .main{
-    margin-left: 10%;
-    margin-right: 10%;
-
-    height: 100%;
-    
-    background: white;
-    color: white;
-    font-weight: bold;
-  }
+  
 
   .helper{
-    /* width: 30px;
-    background: red; */
 
     height: 100%;
     display: inline-block;
     vertical-align: middle;
   }
-
-  .btn-wrap {
-    /* color: white;
-    font-weight: bold;
-    font-size: 100px;
-    background: grey; */
-
-    display: inline-block;
-    vertical-align: middle;
-    margin-top: 10%;
-  }
-
-  /* 두 개씩 보이게 크기 제한 */
-  .btn-con {
-    width: 500px;
-    
-    border: 5px dotted grey;
-  }
+  
 
   /* 하단부에 묘한 공백이 어디서 오는지 모르겠음 ㅜㅜ */
   .img-btn{
@@ -116,7 +89,6 @@ export default {
     /* 이미지사이즈 */
     width: 200px;
     height: 200px;
-    float:left;
     margin: 20px;
     
     /* background 이미지로 넣는경우 */
