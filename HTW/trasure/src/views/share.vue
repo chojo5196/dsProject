@@ -1,8 +1,15 @@
 <template>
     <div class="top">
+
         <h1>나눔</h1>
         <input type="text"><br>
-        <img src="../assets/fine.jpeg" alt="">
+        <shareBox v-for="list in lists"
+        :name="list.name"
+        :author="list.author"
+        :type="list.type"
+        :key="list.name"
+        ></shareBox>
+        
     </div>
       
       
@@ -11,10 +18,21 @@
 </template>
 
 <script>
+import shareBox from './shareBox.vue'
 
 
 export default {
-    name:'share'
+    components: { shareBox },
+    name:'share',
+    data() {
+    return {
+      lists: [
+        {name: '나눔예제1', author: 'user1', type: '유행a'},
+        {name: '나눔예제2', author: 'user2', type: '유형b'},
+        {name: '나눔예제3', author: 'user2', type: '유형a'}
+      ]
+    }
+  }
 
 }
 </script>
@@ -29,7 +47,7 @@ export default {
 .top{
     margin-left: 10%;
     margin-right: 10%;
-    margin-top: 10%;
+    margin-top: 5%;
 
     height: 100%;
 

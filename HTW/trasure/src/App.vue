@@ -88,7 +88,6 @@ export default {
   .img-btn{
     cursor: pointer;
 
-    display: inline-block;
     /* 이미지사이즈 */
     width: 200px;
     height: 200px;
