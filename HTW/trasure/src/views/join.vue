@@ -189,7 +189,8 @@ export default {
 
 
 <style>
-@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+/* @import url(https://fonts.googleapis.com/css?family=Roboto:300); */
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap);
 
 .btnClick {
   position: absolute;
@@ -228,7 +229,7 @@ export default {
 }
 
 .form input {
-  font-family: "Roboto", sans-serif;
+  font-family: "NotoSansKR", sans-serif;
   outline: 0;
   background: #f2f2f2;
   width: 100%;
@@ -240,7 +241,7 @@ export default {
 }
 
 .form button {
-  font-family: "Roboto", sans-serif;
+  font-family: "NotoSansKR'", sans-serif;
   text-transform: uppercase;
   outline: 0;
   background: #4CAF50;
