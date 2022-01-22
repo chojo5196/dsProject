@@ -31,14 +31,13 @@
 
 <script>
 import topNav from './components/topNav.vue'
-
 // import footerBottom from './components/footerBottom.vue'
 
 
 export default {
   name: 'App',
   components: {
-    topNav,
+    topNav
     
     
   }
