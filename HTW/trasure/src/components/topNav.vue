@@ -23,7 +23,7 @@ export default {
     
     /* size */
     width: 100%;
-    height:5cd t%;
+    height:5%;
 
     /* temp */
     background:#EDDECA;

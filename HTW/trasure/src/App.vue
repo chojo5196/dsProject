@@ -2,6 +2,7 @@
   <div id="app">
     <topNav/>
     <router-view/>
+
   <div class="main">
     <div class="btn-wrap">
       <div class="btn-con">
@@ -31,7 +32,6 @@
 
 <script>
 import topNav from './components/topNav.vue'
-
 // import footerBottom from './components/footerBottom.vue'
 
 
@@ -39,8 +39,6 @@ export default {
   name: 'App',
   components: {
     topNav,
-    
-    
   }
 }
 </script>
@@ -63,8 +61,6 @@ export default {
   color: #2c3e50;
   overflow: unset;
 }
-
-
 
   *{
     margin:0;
