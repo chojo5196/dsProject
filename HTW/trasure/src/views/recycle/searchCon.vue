@@ -1,12 +1,6 @@
 <template>
-    <!-- wheel의 기본동작을 못 막음-> 이벤트를 먼저 계속 진행하게 하는것  -->
-    <div class="recycle" v-on:wheel.passive="WheelEvent">
-       <!-- 위치 고정하기 -->
-       <h1>재활용</h1>
-       <div class="search-container"><div class="helper"></div>
+    <div class="search-container"><div class="helper"></div>
            <div class="vertical-container">
-               <!-- 검색하면 post형식으로 submit 데이터 전송 -->
-            
                 <input type="text"  
                     placeholder="검색어를 입력해주세요"
                     class="temp-background"
@@ -54,34 +48,14 @@
            </div>
            
        </div>
-
-       <div class="sub-theme wrapper">
-           <div class="content-container">
-                <div class="content">
-                    <a href=""><img src="" alt="temp"></a>
-                </div>
-                <div class="content">
-                    <a href=""><img src="" alt="temp"></a>
-                </div>
-                <div class="content">
-                    <a href=""><img src="" alt="temp"></a>
-                </div>
-                <div class="content">
-                    <a href=""><img src="" alt="temp"></a>
-                </div>
-           </div>
-       </div>
-    </div>
-      
-    
 </template>
 
 <script>
 export default {
-    name:'recycle',
+    name: 'searchInput',
     data() {
         return {
-            msg : '',
+             msg : '',
             searchArray: [],
             nextId:0,
             checked: true,
@@ -90,7 +64,8 @@ export default {
                 "b": "새학기",
                 "c": "어린이날",
                 "d": "파파존스",
-            }
+            },
+            show: true,
         }
     },
     methods : {
@@ -117,64 +92,14 @@ export default {
                 this.msg='';
             }
         },
-        clear() {
-            this.msg="" 
-            // 제출시 인풋 값 털기
-        },
-        WheelEvent(event) {
-            // 스크롤 시 애니매이션 적용
-            var wheelDown = event.wheelDeltaY;
-            if(wheelDown<0) {
-                // document.querySelector(".sub-theme").style.background = "red";
-                document.querySelector(".sub-theme").style.opacity = "1";
-
-            } else {
-                // document.querySelector(".sub-theme").style.background = "yellow";
-                document.querySelector(".sub-theme").style.opacity = "0";
-            }
-        },
     }
-
 }
-
 </script>
-
 
 <style scoped>
 
-    /* .fade-enter-active, .fade-leave-active {
-        transition: opacity .5s;
-    }
-
-    .fade-enter, .fade-leave-to {
-        opacity: 0;
-    } */
-
-
-    *{
-        margin:0;
-        padding:0;
-        box-sizing: border-box;
-        color: unset;
-        background: unset;
-        color: black;
-    }
-
     .temp-background {
         background: white;
-    }
-
-    .recycle{
-        /* arrange */
-        margin-left: 10%;
-        margin-right: 10%;
-        margin-top: 10%;
-
-        /* position */
-        /* position: relative; */
-
-        /* temp */
-        background: pink;
     }
 
 
@@ -236,58 +161,7 @@ export default {
         opacity: 0.7;
     }
 
-
-    /* 스크롤 시 애니매이션 적용 대상 */
-    .sub-theme {
-        /* temp */
-        background-color: green;
-        
-        /* size */
-        /* height: 100vh; */
-        
-        /* visible */
-        opacity: 0;
-        
-        /* position: absolute;
-        bottom: 0; */
-
-    }
-
-    .wrapper {
-        /* flext 적용 */
-        display: flex;
-        /* 해당영역을 못 벗어나게 */
-        flex-wrap: wrap;
-    }
-
-    .content-container{
     
-        /* arrange */
-        /* 일정한 간격을 두고 flex item들을 보옂 */
-        justify-content: space-around;
-        
-        /* a앙 배치 */
-        margin-left: auto;
-        margin-right: auto;
-
-    }
-
-    /* flex items */
-    .content{
-        /* temp */
-        background: black;
-        
-        /* DISPLAY */
-        display: inline-block;
-
-        /* size */
-        height: 250px;
-        width: 250px;
-
-        /* arramge */
-        margin: 5%;
-    }
-
     .delete {display:inline-block;*display:inline;} 
     .delete:after {display: inline-block;content: "\00d7"; font-size:10pt;}
 

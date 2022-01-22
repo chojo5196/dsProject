@@ -1,27 +1,14 @@
 <template>
     <!-- wheel의 기본동작을 못 막음-> 이벤트를 먼저 계속 진행하게 하는것  -->
-    <div class="recycle" v-on:wheel.passive="WheelEvent">
+     <!-- v-on:wheel.passive="WheelEvent" -->
+    <div class="recycle">
        <!-- 위치 고정하기 -->
        <h1>재활용</h1>
-       <searchInput/>
-       
-
-       <div class="sub-theme wrapper">
-           <div class="content-container">
-                <div class="content">
-                    <a href=""><img src="" alt="temp"></a>
-                </div>
-                <div class="content">
-                    <a href=""><img src="" alt="temp"></a>
-                </div>
-                <div class="content">
-                    <a href=""><img src="" alt="temp"></a>
-                </div>
-                <div class="content">
-                    <a href=""><img src="" alt="temp"></a>
-                </div>
-           </div>
-       </div>
+           <searchInput/>
+       <button @click="showComp">더보기</button>
+       <transition name="fade">
+           <theme v-show="show"/>
+       </transition>
     </div>
       
     
@@ -30,17 +17,33 @@
 
 <script>
 import searchInput from './searchCon.vue';
+import theme from './theme.vue';
 
 export default {
-    components:{searchInput},
+    components:{searchInput, theme},
     name:'recycle',
     data() {
         return {
-           
+           show: false,
         }
     },
     methods : {
+        showComp(){
+            if(this.show==true) {
+                this.show=false;
+            }
+            else {this.show= true;}
+        },
         
+        // WheelEvent(event) {
+        //     // 스크롤 시 애니매이션 적용
+        //     var wheelDown = event.wheelDeltaY;
+        //     if(wheelDown<0) {
+        //         this.show = false;
+        //     } else {
+        //         this.show = true;
+        //     }
+        // },
     }
 
 }
@@ -49,16 +52,6 @@ export default {
 
 
 <style scoped>
-
-    /* .fade-enter-active, .fade-leave-active {
-        transition: opacity .5s;
-    }
-
-    .fade-enter, .fade-leave-to {
-        opacity: 0;
-    } */
-
-
     *{
         margin:0;
         padding:0;
@@ -68,71 +61,43 @@ export default {
         color: black;
     }
 
-    
-
     .recycle{
         /* arrange */
         margin-left: 10%;
         margin-right: 10%;
         margin-top: 10%;
 
-        /* position */
-        /* position: relative; */
+        /* size */
+        /* height: 100%; */
 
         /* temp */
         background: pink;
+        
+        /* hidden */
+        overflow: hidden;
     }
 
-
-    /* 스크롤 시 애니매이션 적용 대상 */
-    .sub-theme {
-        /* temp */
-        background-color: green;
-        
-        /* size */
-        /* height: 100vh; */
-        
-        /* visible */
-        /* opacity: 0; */
-        
-        /* position: absolute;
-        bottom: 0; */
-
-    }
-
-    .wrapper {
-        /* flext 적용 */
-        display: flex;
-        /* 해당영역을 못 벗어나게 */
-        flex-wrap: wrap;
-    }
-
-    .content-container{
+    /* search input */
     
-        /* arrange */
-        /* 일정한 간격을 두고 flex item들을 보옂 */
-        justify-content: space-around;
-        
-        /* a앙 배치 */
-        margin-left: auto;
-        margin-right: auto;
 
+    /* theme */
+    /* 애니메이션 진입 및 진출은 다른 지속 시간 및  */
+    /* 타이밍 기능을 사용할 수 있습니다. */
+    /* 전입 전출시 활성화 */
+    .fade-enter-active {
+        transition: all 1s ease;
+        /* ease 첨빨 중느 막빨 */
+    }
+    .fade-leave-active {
+      transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+      /* transition 효과가 사용자가 정의한 cubic-bezier 함수에 따라 진행 */
+    }
+    .fade-enter, .fade-leave-to {
+        transform: translateY(100px);
+        /* 세로축으로 전환 */
+        opacity: 0;
     }
 
-    /* flex items */
-    .content{
-        /* temp */
-        background: black;
-        
-        /* DISPLAY */
-        display: inline-block;
 
-        /* size */
-        height: 250px;
-        width: 250px;
-
-        /* arramge */
-        margin: 5%;
-    }
 
 </style>
