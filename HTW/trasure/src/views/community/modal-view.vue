@@ -25,7 +25,7 @@
 
 
 <script>
-import eventBus from "../assets/eventBus"
+import eventBus from "../../assets/eventBus"
 export default {
     name: 'modalView',
     data() {

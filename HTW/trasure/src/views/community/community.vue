@@ -89,8 +89,8 @@
 </template>
 
 <script>
-import contentsBox from '../views/contents-box.vue'
-import data from '../assets/communityData.json'
+import contentsBox from './contents-box.vue'
+import data from '../../assets/communityData.json'
 import modalView from './modal-view.vue'
 
 
