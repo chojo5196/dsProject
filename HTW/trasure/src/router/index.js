@@ -42,7 +42,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/recycle.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/recycle/recycle.vue')
   },
   {
     path: '/share',
@@ -50,7 +50,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/share.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/share/share.vue')
   },
   {
     path: '/map',

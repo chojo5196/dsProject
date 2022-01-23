@@ -39,7 +39,6 @@ div {
 }
 .minibox  {
     display: flex;
-    cursor: pointer;
     padding-bottom: 10px;
     height: 190px;
     border-bottom: solid 0.7px;
@@ -48,6 +47,7 @@ div {
 
 .miniImg {
     padding-right: 20px;
+    cursor: pointer;
 }
 
 </style>

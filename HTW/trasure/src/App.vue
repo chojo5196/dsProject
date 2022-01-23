@@ -29,8 +29,6 @@ export default {
   name: 'App',
   components: {
     topNav,main2
-    
-    
   }
 }
 </script>
@@ -71,9 +69,6 @@ export default {
   color: #fdfcfb;
   overflow: unset;
 }
-
-  
-
   .helper{
 
     height: 100%;
