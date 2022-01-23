@@ -23,11 +23,7 @@ export default {
     
     /* size */
     width: 100%;
-    height:5cd t%;
-
-    /* temp */
-    background:#EDDECA;
-    /* border: 3px dashed black; */
+    height:5cd;
   }
 
   /* vertical-align */
