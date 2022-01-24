@@ -7,11 +7,11 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const routes = [
-  // {
-  //   path: '/',
-  //   name: 'Home',
-  //   component: Home
-  // },
+  {
+    path: '/',
+    name: 'main2',
+    component: () => import('@/components/main2.vue')
+  },
   {
     path: '/join',
     name: 'join',
@@ -50,7 +50,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/share.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/share/share.vue')
   },
   {
     path: '/map',

@@ -3,7 +3,6 @@
     <topNav/>
     
     <router-view/>
-    <main2/>      
     
    
     <div class="footer">
@@ -22,7 +21,6 @@
 
 <script>
 import topNav from './components/topNav.vue'
-import main2 from './components/main2.vue'
 
 // import footerBottom from './components/footerBottom.vue'
 
@@ -30,7 +28,7 @@ import main2 from './components/main2.vue'
 export default {
   name: 'App',
   components: {
-    topNav,main2
+    topNav
   }
 }
 </script>
