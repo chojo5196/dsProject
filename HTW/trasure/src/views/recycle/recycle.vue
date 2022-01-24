@@ -1,6 +1,6 @@
 <template>
     <!-- wheel의 기본동작을 못 막음-> 이벤트를 먼저 계속 진행하게 하는것  -->
-     <!-- v-on:wheel.passive="WheelEvent" -->
+    <!-- v-on:wheel.passive="WheelEvent" -->
     <div class="recycle">
         <h2>버튼이벤트로 걸어놨는데 스크롤 인식으로 바꾸기</h2>
         <h3>세로 가운데정렬 걸려있는 상태라 scroll 때문에 아래로 내려간 것 처럼 보임</h3>
@@ -15,7 +15,6 @@
            <theme v-show="show"/>
         </transition>
     </div>
-    
 </template>
 
 <script>

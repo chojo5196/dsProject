@@ -17,6 +17,7 @@ export default {
     data() {
         return {
             themsItem: [
+                // 패키지 설치했는데도 에러나넹 음~ 
                 // img src가 그냥 걸어두면 연결이 안되고 require 연결해야함
                 {link: '../join', img: require('../../assets/fine.jpeg'), content:'tempContent'},
                 {link: '../join', img: require('../../assets/fine.jpeg'), content:'템맘마'},
