@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <topNav />
-    <main2 />
     <router-view />
 
     <!-- <router-view/> -->
@@ -11,13 +10,12 @@
 
 <script>
 import topNav from './components/topNav.vue'
-import main2 from './components/main2.vue'
 
 
 export default {
   name: "App",
   components: {
-    topNav, main2
+    topNav
   },
 };
 </script>

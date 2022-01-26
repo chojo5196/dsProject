@@ -66,7 +66,14 @@ export default {
 </script>
 
 <style scoped>
-  
+
+* {
+    margin: 0;
+    padding: 0;
+    background: unset;
+    color: black;
+}
+
 div {
     margin: 0;
 }
@@ -110,20 +117,20 @@ div {
 
 .author {
     display: block;
-    width: 70%;
+    width: 65%;
     height: 50%;
     /* height: 100%; */
     text-align: left;
-    padding: 5px 10px 5px 10px;
+    padding: 0.3rem 1rem;
 }
 
 .goodPoint {
     display: block;
-    width: 30%;
+    width: 25%;
     height: 50%;
     /* height: 100%; */
     text-align: right;
-    padding: 5px 10px 5px 10px;
+    padding: 0.3rem 1rem;
     /* font-size: 15px; */
 }
 
@@ -134,10 +141,10 @@ div {
 
 .content-title {
     display: block;
-    width: 100%;
+    width: 90%;
     height: 50%;
     text-align: left;
-    padding: 5px 10px 5px 10px;
+    padding: 0.3rem 1rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -145,10 +152,10 @@ div {
 
 .texts {
     display: block;
-    width: 100%;
+    width: 90%;
     /* height: ; */
     text-align: left;
-    padding: 10px 10px 5px 10px;
+    padding: 0.3rem 1rem;
     border-radius: 0 0 10px 10px;
     white-space: normal;
     overflow:initial;

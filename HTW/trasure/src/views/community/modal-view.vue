@@ -10,10 +10,10 @@
                     <div class="modal-text-box">
                             <div class="title-goodPoint">
                                 <p>{{ receivedNode.title }}</p>
-                                <p>좋아요 수 : {{ receivedNode.goodPoint }}</p>
+                                <p class="goodPointP">좋아요 수 : {{ receivedNode.goodPoint }}</p>
                             </div>
                             <p class="txt">{{ receivedNode.texts }}</p>
-                            <p>{{ receivedNode.author }}</p>
+                            <p class="modal-author">{{ receivedNode.author }}</p>
 
                     </div>
                 </div>
@@ -66,6 +66,13 @@ export default {
 
 <style scoped>
 
+* {
+    margin: 0;
+    padding: 0;
+    background: unset;
+    color: black;
+}
+
 .communityModal {
     position: fixed;
     top: 0;
@@ -84,6 +91,8 @@ export default {
 }
 
 .modalBox {
+    /* display: flex;
+    flex-direction: column; */
     position: absolute;
     background-color: #595349;
     width: 80%;
@@ -94,8 +103,8 @@ export default {
 .modalBox-container {
     background: #BFB19D;
     display: flex;
-    width: 100%;
-    height: 100%;
+    width: 98%;
+    height: 96%;
     padding: 10px;
 }
 
@@ -116,9 +125,9 @@ export default {
     flex-direction: column;
     width: 59%;
     height: 100%;
-    margin-left: 1%;
     text-align: left;
     line-height: 25px;
+    margin-left: 1%;
 }
 
 .modal-text-box .title-goodPoint {
@@ -129,27 +138,26 @@ export default {
 
 .title-goodPoint p:nth-child(1) {
     width: 80%;
-    /* height: 10%; */
     font-size: 1.5em;
     font-weight: bold;
     padding: 10px;
 }
 
-.title-goodPoint p:nth-child(2) {
+.goodPointP {
     width: 100%;
     font-weight: bold;
     padding: 10px;
+    text-align: right;
 }
 
 .modal-text-box .txt {
-    width: 100%;
     height: 80%;
     /* font-size: 1.5em; */
     font-weight: bold;
     padding: 10px;
 }
 
-.modal-text-box p:last-child {
+.modal-author {
     font-weight: bold;
     height: 10%;
     padding: 10px;
