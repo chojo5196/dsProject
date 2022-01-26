@@ -9,7 +9,7 @@
 </template>
 <script>
 export default {
-    name: 'main'
+    name: 'main2'
 }
 </script>
 <style scoped>

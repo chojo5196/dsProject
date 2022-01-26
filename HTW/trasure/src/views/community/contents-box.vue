@@ -6,7 +6,7 @@
             <div class="img-box">
                 <img :src="contentDiv.src" alt="sample">
             </div>
-            <div class="text-box">
+            <div class="text-boxC">
                 <div class="author-goodPoint">
                     <span class="author">
                         {{ contentDiv.author }}
@@ -78,6 +78,8 @@ div {
     margin: 10px;
     /* background: green; */
     cursor: pointer;
+    color: black;
+
 }
 
 .img-box {
@@ -93,7 +95,7 @@ div {
     border-radius: 10px 10px 0 0;
 }
 
-.text-box {
+.text-boxC {
     display: flex;
     flex-direction: column;
     /* max-height: 30%; */
