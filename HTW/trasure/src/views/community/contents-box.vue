@@ -6,7 +6,7 @@
             <div class="img-box">
                 <img :src="contentDiv.src" alt="sample">
             </div>
-            <div class="text-box">
+            <div class="text-boxC">
                 <div class="author-goodPoint">
                     <span class="author">
                         {{ contentDiv.author }}
@@ -66,9 +66,12 @@ export default {
 </script>
 
 <style scoped>
-  
+
 * {
-    background-color : unset;
+    margin: 0;
+    padding: 0;
+    background: unset;
+    color: black;
 }
 
 div {
@@ -82,6 +85,8 @@ div {
     margin: 10px;
     /* background: green; */
     cursor: pointer;
+    color: black;
+
 }
 
 .img-box {
@@ -97,7 +102,7 @@ div {
     border-radius: 10px 10px 0 0;
 }
 
-.text-box {
+.text-boxC {
     display: flex;
     flex-direction: column;
     /* max-height: 30%; */
@@ -112,20 +117,20 @@ div {
 
 .author {
     display: block;
-    width: 70%;
+    width: 65%;
     height: 50%;
     /* height: 100%; */
     text-align: left;
-    padding: 5px 10px 5px 10px;
+    padding: 0.3rem 1rem;
 }
 
 .goodPoint {
     display: block;
-    width: 30%;
+    width: 25%;
     height: 50%;
     /* height: 100%; */
     text-align: right;
-    padding: 5px 10px 5px 10px;
+    padding: 0.3rem 1rem;
     /* font-size: 15px; */
 }
 
@@ -136,10 +141,10 @@ div {
 
 .content-title {
     display: block;
-    width: 100%;
+    width: 90%;
     height: 50%;
     text-align: left;
-    padding: 5px 10px 5px 10px;
+    padding: 0.3rem 1rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -147,10 +152,10 @@ div {
 
 .texts {
     display: block;
-    width: 100%;
+    width: 90%;
     /* height: ; */
     text-align: left;
-    padding: 10px 10px 5px 10px;
+    padding: 0.3rem 1rem;
     border-radius: 0 0 10px 10px;
     white-space: normal;
     overflow:initial;
