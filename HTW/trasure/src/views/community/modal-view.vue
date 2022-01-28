@@ -65,6 +65,10 @@ export default {
 
 
 <style scoped>
+* {
+    background-color: unset;
+    
+}
 
 * {
     margin: 0;

@@ -4,6 +4,7 @@
 
         <h1>정보공유</h1>
           <modal-view />
+          <write-modal />
             <input id="formField" name="hashTag" v-model="inputValue" type="text" @keyup.enter="addHashtag"><br>
         <div class="hash-area">
             <div class="button-area">
@@ -44,7 +45,7 @@
         <div class="edit">
         <input type="text" class="search">
         <button class="button">#</button>
-        <button class="button">글쓰기</button>
+        <button class="button" @click="writeOn">글쓰기</button>
         </div>
         
         <div id="paperG" class="paperG">
@@ -92,11 +93,12 @@
 import contentsBox from './contents-box.vue'
 import data from '../../assets/communityData.json'
 import modalView from './modal-view.vue'
+import writeModal from './write-modal.vue'
 
 
 
   export default {
-    components: { contentsBox, modalView },
+    components: { contentsBox, modalView, writeModal },
     name:'community',
       data() {
         return {
@@ -113,6 +115,9 @@ import modalView from './modal-view.vue'
             this.hash.push("#" + this.inputValue);
                 this.inputValue = "";
               }
+          },
+          writeOn() {
+            document.querySelector(".write-modal").classList.remove("hidden");
           }
     }
 }
